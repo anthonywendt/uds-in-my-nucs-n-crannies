@@ -3,3 +3,12 @@ options:
 variables:
   metallb:
     IP_ADDRESS_POOL: "10.2.7.2-10.2.7.19"
+  core:
+    ADMIN_TLS_CERT: |
+      replace-me-with-base64-admin-cert
+    ADMIN_TLS_KEY: |
+      replace-me-with-base64-admin-key
+    TENANT_TLS_CERT: |
+      replace-me-with-base64-tenant-cert
+    TENANT_TLS_KEY: |
+      replace-me-with-base64-tenant-key
