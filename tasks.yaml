@@ -1,0 +1,17 @@
+variables:
+  - name: ARCH
+    description: "What architecture to use"
+    default: "amd64"
+
+includes:
+  - create: ./tasks/create.yaml
+  - deploy: ./tasks/deploy.yaml
+
+tasks:
+  - name: create-my-bundle
+    actions:
+      - task: create:my-bundle
+
+  - name: deploy-my-bundle
+    actions:
+      - task: deploy:my-bundle

@@ -1,0 +1,43 @@
+kind: UDSBundle
+metadata:
+  name: nucs-n-crannies-demo
+  description: A UDS bundle for deploying the standard UDS Core package on a NUC
+  version: "0.0.1"
+
+packages:
+  # Zarf init
+  - name: init
+    repository: ghcr.io/defenseunicorns/uds-capability/rook-ceph/init
+    optional-components:
+      - git-server
+    ref: v0.32.1-0.2.1
+
+  # MetalLB
+  - name: metallb
+    repository: ghcr.io/defenseunicorns/packages/metallb
+    ref: 0.0.5-amd64
+
+  # UDS Core
+  - name: core
+    repository: ghcr.io/defenseunicorns/packages/uds/core
+    ref: 0.9.2-upstream
+    overrides:
+      istio-admin-gateway:
+        uds-istio-config:
+          variables:
+            - name: ADMIN_TLS_CERT
+              description: "The TLS cert for the admin gateway (must be base64 encoded)"
+              path: tls.cert
+            - name: ADMIN_TLS_KEY
+              description: "The TLS key for the admin gateway (must be base64 encoded)"
+              path: tls.key
+      istio-tenant-gateway:
+        uds-istio-config:
+          variables:
+            - name: TENANT_TLS_CERT
+              description: "The TLS cert for the tenant gateway (must be base64 encoded)"
+              path: tls.cert
+            - name: TENANT_TLS_KEY
+              description: "The TLS key for the tenant gateway (must be base64 encoded)"
+              path: tls.key
+

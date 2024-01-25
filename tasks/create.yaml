@@ -1,0 +1,5 @@
+tasks:
+  - name: my-bundle
+    description: Create the UDS bundle with Gitlab and its dependencies
+    actions:
+      - cmd: uds create bundles/ --confirm --no-progress --architecture=${ARCH}
