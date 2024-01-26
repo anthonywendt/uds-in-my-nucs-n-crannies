@@ -1,8 +1,6 @@
 options:
   log_level: info
 variables:
-  metallb:
-    IP_ADDRESS_POOL: "10.2.7.2-10.2.7.19"
   core:
     ADMIN_TLS_CERT: |
       replace-me-with-base64-admin-cert
