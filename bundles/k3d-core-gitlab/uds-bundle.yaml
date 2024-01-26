@@ -1,6 +1,6 @@
 kind: UDSBundle
 metadata:
-  name: nucs-n-crannies-demo
+  name: nucs-n-crannies-k3d-demo
   description: A UDS bundle for deploying UDS Core on in our nucs and crannies
   version: "0.0.1"
 
@@ -51,3 +51,23 @@ packages:
             - name: TENANT_TLS_KEY
               description: "The TLS key for the tenant gateway (must be base64 encoded)"
               path: tls.key
+
+  - name: dev-minio
+    repository: ghcr.io/defenseunicorns/packages/uds/dev-minio
+    ref: 5.0.13-0
+
+  - name: dev-postgres
+    repository: ghcr.io/defenseunicorns/packages/uds/dev-postgres
+    ref: 12.6.6-0
+
+  - name: dev-redis
+    repository: ghcr.io/defenseunicorns/packages/uds/dev-redis
+    ref: 17.13.2-0
+
+  - name: dev-secrets
+    path: ../../
+    ref: 0.1.0
+
+  - name: gitlab
+    repository: ghcr.io/defenseunicorns/packages/uds/gitlab
+    ref: 16.5.1-uds.4-amd64

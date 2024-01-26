@@ -1,5 +1,5 @@
 tasks:
-  - name: my-bundle
+  - name: k3d-bundle
     actions:
-      - description: Deploy the bundle
-        cmd: UDS_CONFIG=bundles/uds-config.yaml uds deploy bundles/uds-bundle-nucs-n-crannies-demo-${ARCH}-*.tar.zst --confirm --no-progress
+      - description: Deploy the k3d bundle
+        cmd: UDS_CONFIG=bundles/k3d-core-gitlab/uds-config.yaml uds deploy bundles/uds-bundle-nucs-n-crannies-k3d-demo-${ARCH}-*.tar.zst --confirm --no-progress

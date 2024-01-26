@@ -1,5 +1,20 @@
 tasks:
-  - name: my-bundle
-    description: Create the UDS bundle with Gitlab and its dependencies
+  - name: k3d-bundle
+    description: Create the UDS bundle for k3d with Core, Gitlab and its dependencies
     actions:
-      - cmd: uds create bundles/ --confirm --no-progress --architecture=${ARCH}
+      - cmd: uds create bundles/k3d-core-gitlab --confirm --no-progress --architecture=${ARCH}
+
+  - name: rke2-bundle
+    description: Create the UDS bundle for RKE2 with Core
+    actions:
+      - cmd: uds create bundles/rke2-core --confirm --no-progress --architecture=${ARCH}
+
+  - name: gitlab-dependency-package
+    description: Create the Minio, PostgreSQL, and Redis Dependency Zarf Packages
+    actions:
+      - cmd: zarf package create src/dev-secrets/ --confirm --no-progress --architecture=${ARCH} --skip-sbom
+
+  - name: dns-updates
+    description: Package to update dns updates
+    actions:
+      - cmd: zarf package create src/dns-updates/ --confirm --no-progress --architecture=${ARCH} --skip-sbom

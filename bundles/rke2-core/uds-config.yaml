@@ -1,0 +1,4 @@
+options:
+  log_level: info
+metallb:
+    IP_ADDRESS_POOL: "10.2.7.2-10.2.7.19"
