@@ -5,21 +5,25 @@ metadata:
   version: "0.0.1"
 
 packages:
+  # Local path provisioner
+  - name: local-path-provisioner
+    path: ./build
+    ref: 1.0.0
+
   # Zarf init
   - name: init
-    repository: ghcr.io/defenseunicorns/uds-capability/rook-ceph/init
-    optional-components:
-      - git-server
-    ref: v0.32.1-0.2.1
+    repository: ghcr.io/defenseunicorns/packages/init
+    ref: v0.32.3
 
   # MetalLB
   - name: metallb
     repository: ghcr.io/defenseunicorns/packages/metallb
     ref: 0.0.5-amd64
 
+  # UDS Core
   - name: core
     repository: ghcr.io/defenseunicorns/packages/uds/core
-    ref: 0.9.2-upstream
+    ref: 0.13.1-upstream
     overrides:
       loki:
         loki:
@@ -45,9 +49,10 @@ packages:
             - name: TENANT_TLS_KEY
               description: "The TLS key for the tenant gateway (must be base64 encoded)"
               path: tls.key
+
   # Add all virtualservices as internal dns entries for auth callbacks
   - name: dns-updates
-    path: ../../
+    path: ./build
     ref: 1.0.0
-    optional-components:
+    optionalComponents:
       - create-internal-dns-entries

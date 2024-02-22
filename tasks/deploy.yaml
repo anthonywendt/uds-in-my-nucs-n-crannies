@@ -2,4 +2,9 @@ tasks:
   - name: k3d-bundle
     actions:
       - description: Deploy the k3d bundle
-        cmd: UDS_CONFIG=bundles/k3d-core-gitlab/uds-config.yaml uds deploy bundles/uds-bundle-nucs-n-crannies-k3d-demo-${ARCH}-*.tar.zst --confirm --no-progress
+        cmd: UDS_CONFIG=bundles/k3d-core-gitlab/uds-config.yaml uds deploy ./build/uds-bundle-nucs-n-crannies-k3d-demo-${ARCH}-*.tar.zst --confirm --no-progress
+
+  - name: rke2-bundle
+    actions:
+      - description: Deploy the k3d bundle
+        cmd: UDS_CONFIG=bundles/rke2-core/uds-config.yaml uds deploy ./build/uds-bundle-nucs-n-crannies-rke2-demo-${ARCH}-*.tar.zst --confirm --no-progress

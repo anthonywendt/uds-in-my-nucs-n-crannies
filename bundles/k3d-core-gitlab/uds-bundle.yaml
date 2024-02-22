@@ -65,7 +65,7 @@ packages:
     ref: 17.13.2-0
 
   - name: dev-secrets
-    path: ../../
+    path: ./build
     ref: 0.1.0
 
   - name: gitlab

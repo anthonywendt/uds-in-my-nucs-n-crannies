@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/defenseunicorns/zarf/main/zarf.schema.json
+kind: ZarfPackageConfig
+metadata:
+  name: local-path-provisioner
+  description: "Creates a local path provisioner"
+  yolo: true
+  version: "1.0.0"
+  architecture: amd64
+
+components:
+  - name: local-path-provisioner
+    required: true
+    charts:
+      - name: local-path-provisioner
+        namespace: local-path-storage
+        localPath: ../../chart
+        version: 0.2.0

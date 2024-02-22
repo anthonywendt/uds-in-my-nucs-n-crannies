@@ -8,10 +8,6 @@ includes:
   - deploy: ./tasks/deploy.yaml
 
 tasks:
-  - name: create-deps-package
-    actions:
-      - task: create:gitlab-dependency-package
-
   - name: create-k3d-bundle
     actions:
       - task: create:gitlab-dependency-package
@@ -19,6 +15,7 @@ tasks:
 
   - name: create-rke2-bundle
     actions:
+      - task: create:local-path-provisioner
       - task: create:dns-updates
       - task: create:rke2-bundle
 
