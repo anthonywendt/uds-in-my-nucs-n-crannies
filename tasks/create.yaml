@@ -17,6 +17,12 @@ tasks:
       - cmd: uds create bundles/rke2-core --confirm --no-progress --architecture=${ARCH}
       - cmd: mv bundles/rke2-core/uds-bundle-* ./build
 
+  - name: ai4ns-bundle
+    description: Create AI4NS bundle
+    actions:
+      - cmd: uds create bundles/ai4ns --confirm --no-progress --architecture=${ARCH}
+      - cmd: mv bundles/ai4ns/uds-bundle-* ./build
+
   - name: local-path-provisioner
     description: Create local path provisioner package
     actions:

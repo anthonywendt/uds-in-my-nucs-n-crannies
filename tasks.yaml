@@ -19,6 +19,14 @@ tasks:
       - task: create:dns-updates
       - task: create:rke2-bundle
 
+  - name: create-ai4ns-bundle
+    actions:
+      - task: create:ai4ns-bundle
+
   - name: deploy-rke2-bundle
     actions:
       - task: deploy:rke2-bundle
+
+  - name: deploy-ai4ns-bundle
+    actions:
+      - task: deploy:ai4ns-bundle
