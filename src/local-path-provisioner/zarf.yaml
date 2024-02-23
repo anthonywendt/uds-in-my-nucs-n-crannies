@@ -12,6 +12,6 @@ components:
     required: true
     charts:
       - name: local-path-provisioner
-        namespace: local-path-storage
+        namespace: uds-dev-stack
         localPath: ../../chart
         version: 0.2.0
