@@ -10,6 +10,9 @@ If RKE2 needs reinstalled, run the rke_uninstall command and rerun the `start-no
 
 *This section has only been tested on RHEL 8.9 with RKE2 installed via airgap tarball method*
 
+TLDR;
+Connected to legit network, install and start RKE2
+
 RKE2 expects there to be a default route and an interface with an assigned IP address before it will startup. The `dummy-nic.sh` script can be run on a host to either enable installing RKE2 while that host is not connected to a network (assuming you have all of the airgap tarballs available on the machine), or a host that already has RKE2 installed that has been disconnected from a network to enable RKE2 to start up while being disconnected. If you want an RKE2 host to work both while connected to a network and while disconnected, ensure that the same IP settings are used for the dummy interface as the network that you use when RKE2 is connected. If during startup the host IP doesn't match the IP that RKE2 was installed with, etcd will not start properly since it doesn't think the host is a member of the etcd cluster.
 
 If you have a baremetal node with RKE2 preinstalled and you need it to start without being connected to a network, simply edit the `dummy-nic.sh` script to use the IP settings that RKE2 was installed with and then run the script. It will stop RKE2, create the dummy interface, and then restart RKE2. Now you should be able to interact with the cluster and access services locally on the machine while being disconnected. To use it connected again, power the system down, reconnect networking cables, and power back up. The dummy interface will be gone, and the default interface will be configured for the network you are attached to again.

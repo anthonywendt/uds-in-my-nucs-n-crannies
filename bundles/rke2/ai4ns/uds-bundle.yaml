@@ -1,8 +1,8 @@
 kind: UDSBundle
 metadata:
-  name: leapfrogai
-  description: A UDS bundle for deploying LeapfrogAI
-  version: 0.1.0
+  name: nucs-n-crannies-ai4ns
+  description: A UDS bundle for deploying AI4NS
+  version: 0.0.1
 
 packages:
   - name: leapfrogai-api

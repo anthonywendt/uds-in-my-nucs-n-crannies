@@ -1,0 +1,26 @@
+kind: UDSBundle
+metadata:
+  name: nucs-n-crannies-swf
+  description: A UDS bundle for deploying SWF capabilities
+  version: "0.0.1"
+
+packages:
+  - name: dev-minio
+    repository: ghcr.io/defenseunicorns/packages/uds/dev-minio
+    ref: 5.0.13-0
+
+  - name: dev-postgres
+    repository: ghcr.io/defenseunicorns/packages/uds/dev-postgres
+    ref: 12.6.6-0
+
+  - name: dev-redis
+    repository: ghcr.io/defenseunicorns/packages/uds/dev-redis
+    ref: 17.13.2-0
+
+  - name: dev-secrets
+    path: ../../../build
+    ref: 0.1.0
+
+  - name: gitlab
+    repository: ghcr.io/defenseunicorns/packages/uds/gitlab
+    ref: 16.5.1-uds.4-amd64

@@ -1,29 +1,14 @@
 kind: UDSBundle
 metadata:
-  name: nucs-n-crannies-rke2-demo
+  name: nucs-n-crannies-uds-core
   description: A UDS bundle for deploying UDS Core on in our nucs and crannies
   version: "0.0.1"
 
 packages:
-  # Local path provisioner
-  - name: local-path-provisioner
-    path: ./build
-    ref: 1.0.0
-
-  # Zarf init
-  - name: init
-    repository: ghcr.io/defenseunicorns/packages/init
-    ref: v0.32.3
-
-  # MetalLB
-  - name: metallb
-    repository: ghcr.io/defenseunicorns/packages/metallb
-    ref: 0.0.5-amd64
-
   # UDS Core
   - name: core
     repository: ghcr.io/defenseunicorns/packages/uds/core
-    ref: 0.13.1-upstream
+    ref: 0.15.0-upstream
     overrides:
       loki:
         loki:
@@ -52,7 +37,7 @@ packages:
 
   # Add all virtualservices as internal dns entries for auth callbacks
   - name: dns-updates
-    path: ./build
+    path: ../../../build
     ref: 1.0.0
     optionalComponents:
       - create-internal-dns-entries

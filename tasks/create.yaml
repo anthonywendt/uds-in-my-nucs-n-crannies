@@ -11,19 +11,31 @@ tasks:
       - cmd: uds create bundles/k3d-core-gitlab --confirm --no-progress --architecture=${ARCH}
       - cmd: mv bundles/k3d-core-gitlab/uds-bundle-* ./build
 
-  - name: rke2-bundle
-    description: Create the UDS bundle for RKE2 with Core
+  - name: init-bundle
+    description: Create the UDS bundle for init
     actions:
-      - cmd: uds create bundles/rke2-core --confirm --no-progress --architecture=${ARCH}
-      - cmd: mv bundles/rke2-core/uds-bundle-* ./build
+      - cmd: uds create bundles/rke2/init/ --confirm --no-progress --architecture=${ARCH}
+      - cmd: mv bundles/rke2/init/uds-bundle-* ./build
+
+  - name: uds-core-bundle
+    description: Create the UDS bundle for uds-core
+    actions:
+      - cmd: uds create bundles/rke2/uds-core/ --confirm --no-progress --architecture=${ARCH}
+      - cmd: mv bundles/rke2/uds-core/uds-bundle-* ./build
 
   - name: ai4ns-bundle
     description: Create AI4NS bundle
     actions:
-      - cmd: uds create bundles/ai4ns --confirm --no-progress --architecture=${ARCH}
-      - cmd: mv bundles/ai4ns/uds-bundle-* ./build
+      - cmd: uds create bundles/rke2/ai4ns --confirm --no-progress --architecture=${ARCH}
+      - cmd: mv bundles/rke2/ai4ns/uds-bundle-* ./build
 
-  - name: local-path-provisioner
+  - name: swf-bundle
+    description: Create AI4NS bundle
+    actions:
+      - cmd: uds create bundles/rke2/swf --confirm --no-progress --architecture=${ARCH}
+      - cmd: mv bundles/rke2/swf/uds-bundle-* ./build
+
+  - name: local-path-provisioner-package
     description: Create local path provisioner package
     actions:
       - cmd: zarf package create src/local-path-provisioner/ --confirm --no-progress --architecture=${ARCH} --skip-sbom --output ./build
@@ -33,7 +45,7 @@ tasks:
     actions:
       - cmd: zarf package create src/dev-secrets/ --confirm --no-progress --architecture=${ARCH} --skip-sbom --output ./build
 
-  - name: dns-updates
+  - name: dns-updates-package
     description: Package to update dns updates
     actions:
       - cmd: zarf package create src/dns-updates/ --confirm --no-progress --architecture=${ARCH} --skip-sbom --output ./build

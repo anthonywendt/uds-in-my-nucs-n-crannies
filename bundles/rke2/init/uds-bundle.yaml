@@ -1,0 +1,21 @@
+kind: UDSBundle
+metadata:
+  name: nucs-n-crannies-init
+  description: A UDS bundle for deploying local path, zarf init and metallb in our nucs and crannies
+  version: "0.0.1"
+
+packages:
+  # Local path provisioner
+  - name: local-path-provisioner
+    path: ../../../build
+    ref: 1.0.0
+
+  # Zarf init
+  - name: init
+    repository: ghcr.io/defenseunicorns/packages/init
+    ref: v0.32.4
+
+  # MetalLB
+  - name: metallb
+    repository: ghcr.io/defenseunicorns/packages/metallb
+    ref: 0.0.5-amd64

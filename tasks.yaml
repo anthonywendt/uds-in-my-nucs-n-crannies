@@ -10,23 +10,50 @@ includes:
 tasks:
   - name: create-k3d-bundle
     actions:
+      - task: create:build-dir
       - task: create:gitlab-dependency-package
       - task: create:k3d-bundle
 
-  - name: create-rke2-bundle
+  - name: create-init-bundle
     actions:
-      - task: create:local-path-provisioner
-      - task: create:dns-updates
-      - task: create:rke2-bundle
+      - task: create:build-dir
+      - task: create:local-path-provisioner-package
+      - task: create:init-bundle
+
+  - name: create-uds-core-bundle
+    actions:
+      - task: create:build-dir
+      - task: create:dns-updates-package
+      - task: create:uds-core-bundle
 
   - name: create-ai4ns-bundle
     actions:
+      - task: create:build-dir
       - task: create:ai4ns-bundle
 
-  - name: deploy-rke2-bundle
+  - name: create-swf-bundle
     actions:
-      - task: deploy:rke2-bundle
+      - task: create:build-dir
+      - task: create:gitlab-dependency-package
+      - task: create:swf-bundle
+
+  - name: deploy-init-bundle
+    actions:
+      - task: deploy:init-bundle
+
+  - name: deploy-uds-core-bundle
+    actions:
+      - task: deploy:uds-core-bundle
 
   - name: deploy-ai4ns-bundle
     actions:
       - task: deploy:ai4ns-bundle
+
+  - name: deploy-swf-bundle
+    actions:
+      - task: deploy:swf-bundle
+
+  #### Clean ####
+  - name: clean
+    actions:
+      - cmd: rm -rf ./build/*
