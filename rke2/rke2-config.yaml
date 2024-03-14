@@ -1,3 +1,4 @@
 disable:
   - rke2-ingress-nginx
   - rke2-metrics-server
+selinux: true

@@ -38,14 +38,14 @@ tasks:
   - name: local-path-provisioner-package
     description: Create local path provisioner package
     actions:
-      - cmd: zarf package create src/local-path-provisioner/ --confirm --no-progress --architecture=${ARCH} --skip-sbom --output ./build
+      - cmd: uds zarf package create src/local-path-provisioner/ --confirm --no-progress --architecture=${ARCH} --skip-sbom --output ./build
 
   - name: gitlab-dependency-package
     description: Create the Minio, PostgreSQL, and Redis Dependency Zarf Packages
     actions:
-      - cmd: zarf package create src/dev-secrets/ --confirm --no-progress --architecture=${ARCH} --skip-sbom --output ./build
+      - cmd: uds zarf package create src/dev-secrets/ --confirm --no-progress --architecture=${ARCH} --skip-sbom --output ./build
 
   - name: dns-updates-package
     description: Package to update dns updates
     actions:
-      - cmd: zarf package create src/dns-updates/ --confirm --no-progress --architecture=${ARCH} --skip-sbom --output ./build
+      - cmd: uds zarf package create src/dns-updates/ --confirm --no-progress --architecture=${ARCH} --skip-sbom --output ./build
