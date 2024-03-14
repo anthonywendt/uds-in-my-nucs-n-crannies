@@ -15,7 +15,7 @@ Startup machine...
 Disconnected
 - Update and run `dummy-nic.sh` This will set up dummy route with the original IP and restart RKE2
 - RKE2 cluster should be back :fingers-crossed:
-- Deploy uds-core, ai4ns, swf bundles. This can also happen while connected if you wish
+- Deploy uds-core, lfai, swf bundles. This can also happen while connected if you wish
 - Connect to machine via thunderbolt network connection
 - ssh into machine through that connection and show all the things
 
@@ -29,8 +29,8 @@ uds run create-init-bundle
 # Create uds-core bundle
 uds run create-uds-core-bundle
 
-# Create ai4ns bundle
-uds run create-ai4ns-bundle
+# Create LeapfrogAI bundle
+uds run create-lfai-bundle
 
 # Create swf bundle
 uds run create-swf-bundle
@@ -41,8 +41,8 @@ uds run deploy-init-bundle
 # Deploy uds-core bundle (10m)
 uds run deploy-uds-core-bundle
 
-# Deploy ai4ns bundle (4m)
-uds run deploy-ai4ns-bundle
+# Deploy LeapfrogAI bundle (4m)
+uds run deploy-lfai-bundle
 
 # Deploy swf bundle (? Probably 5m) Hit disc pressure issue before I could finish
 uds run deploy-swf-bundle

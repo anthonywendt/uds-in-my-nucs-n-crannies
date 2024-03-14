@@ -23,14 +23,14 @@ tasks:
       - cmd: uds create bundles/rke2/uds-core/ --confirm --no-progress --architecture=${ARCH}
       - cmd: mv bundles/rke2/uds-core/uds-bundle-* ./build
 
-  - name: ai4ns-bundle
-    description: Create AI4NS bundle
+  - name: lfai-bundle
+    description: Create LeapfrogAI bundle
     actions:
-      - cmd: uds create bundles/rke2/ai4ns --confirm --no-progress --architecture=${ARCH}
-      - cmd: mv bundles/rke2/ai4ns/uds-bundle-* ./build
+      - cmd: uds create bundles/rke2/lfai --confirm --no-progress --architecture=${ARCH}
+      - cmd: mv bundles/rke2/lfai/uds-bundle-* ./build
 
   - name: swf-bundle
-    description: Create AI4NS bundle
+    description: Create SWF bundle
     actions:
       - cmd: uds create bundles/rke2/swf --confirm --no-progress --architecture=${ARCH}
       - cmd: mv bundles/rke2/swf/uds-bundle-* ./build

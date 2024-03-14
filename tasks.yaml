@@ -26,10 +26,10 @@ tasks:
       - task: create:dns-updates-package
       - task: create:uds-core-bundle
 
-  - name: create-ai4ns-bundle
+  - name: create-lfai-bundle
     actions:
       - task: create:build-dir
-      - task: create:ai4ns-bundle
+      - task: create:lfai-bundle
 
   - name: create-swf-bundle
     actions:
@@ -45,9 +45,9 @@ tasks:
     actions:
       - task: deploy:uds-core-bundle
 
-  - name: deploy-ai4ns-bundle
+  - name: deploy-lfai-bundle
     actions:
-      - task: deploy:ai4ns-bundle
+      - task: deploy:lfai-bundle
 
   - name: deploy-swf-bundle
     actions:
