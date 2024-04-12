@@ -1,0 +1,19 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/defenseunicorns/zarf/main/zarf.schema.json
+kind: ZarfPackageConfig
+metadata:
+  name: gpu-operator
+  version: "0.1.0"
+  architecture: amd64
+  # This package must be YOLO since it is installed in kube-system
+  yolo: true
+
+components:
+  - name: nvidia-gpu-operator
+    required: true
+    charts:
+      - name: gpu-operator
+        url: https://helm.ngc.nvidia.com/nvidia
+        version: "v23.9.1"
+        namespace: "kube-system"
+        valuesFiles:
+          - "values.yaml"

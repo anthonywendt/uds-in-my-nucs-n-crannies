@@ -33,6 +33,7 @@ tasks:
   - name: create-lfai-gpu-bundle
     actions:
       - task: create:build-dir
+      - task: create:gpu-operator-package
       - task: create:lfai-gpu-bundle
 
   - name: create-swf-bundle

@@ -46,6 +46,11 @@ tasks:
     actions:
       - cmd: uds zarf package create src/local-path-provisioner/ --confirm --no-progress --architecture=${ARCH} --skip-sbom --output ./build
 
+  - name: gpu-operator-package
+    description: Create gpu operator package
+    actions:
+      - cmd: uds zarf package create src/gpu-operator/ --confirm --no-progress --architecture=${ARCH} --skip-sbom --output ./build
+
   - name: gitlab-dependency-package
     description: Create the Minio, PostgreSQL, and Redis Dependency Zarf Packages
     actions:

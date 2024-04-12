@@ -5,6 +5,10 @@ metadata:
   version: 0.0.1
 
 packages:
+  - name: gpu-operator
+    path: ../../../build
+    ref: 0.1.0
+
   # OpenAI-like API
   - name: leapfrogai-api
     repository: ghcr.io/defenseunicorns/packages/leapfrogai/leapfrogai-api
