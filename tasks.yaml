@@ -23,13 +23,17 @@ tasks:
   - name: create-uds-core-bundle
     actions:
       - task: create:build-dir
-      - task: create:dns-updates-package
       - task: create:uds-core-bundle
 
-  - name: create-lfai-bundle
+  - name: create-lfai-cpu-bundle
     actions:
       - task: create:build-dir
-      - task: create:lfai-bundle
+      - task: create:lfai-cpu-bundle
+
+  - name: create-lfai-gpu-bundle
+    actions:
+      - task: create:build-dir
+      - task: create:lfai-gpu-bundle
 
   - name: create-swf-bundle
     actions:
@@ -45,9 +49,13 @@ tasks:
     actions:
       - task: deploy:uds-core-bundle
 
-  - name: deploy-lfai-bundle
+  - name: deploy-lfai-cpu-bundle
     actions:
-      - task: deploy:lfai-bundle
+      - task: deploy:lfai-cpu-bundle
+
+  - name: deploy-lfai-gpu-bundle
+    actions:
+      - task: deploy:lfai-gpu-bundle
 
   - name: deploy-swf-bundle
     actions:

@@ -23,11 +23,17 @@ tasks:
       - cmd: uds create bundles/rke2/uds-core/ --confirm --no-progress --architecture=${ARCH}
       - cmd: mv bundles/rke2/uds-core/uds-bundle-* ./build
 
-  - name: lfai-bundle
-    description: Create LeapfrogAI bundle
+  - name: lfai-cpu-bundle
+    description: Create LeapfrogAI CPU bundle
     actions:
-      - cmd: uds create bundles/rke2/lfai --confirm --no-progress --architecture=${ARCH}
-      - cmd: mv bundles/rke2/lfai/uds-bundle-* ./build
+      - cmd: uds create bundles/rke2/lfai-cpu --confirm --no-progress --architecture=${ARCH}
+      - cmd: mv bundles/rke2/lfai-cpu/uds-bundle-* ./build
+
+  - name: lfai-gpu-bundle
+    description: Create LeapfrogAI GPU bundle
+    actions:
+      - cmd: uds create bundles/rke2/lfai-gpu --confirm --no-progress --architecture=${ARCH}
+      - cmd: mv bundles/rke2/lfai-gpu/uds-bundle-* ./build
 
   - name: swf-bundle
     description: Create SWF bundle
@@ -44,8 +50,3 @@ tasks:
     description: Create the Minio, PostgreSQL, and Redis Dependency Zarf Packages
     actions:
       - cmd: uds zarf package create src/dev-secrets/ --confirm --no-progress --architecture=${ARCH} --skip-sbom --output ./build
-
-  - name: dns-updates-package
-    description: Package to update dns updates
-    actions:
-      - cmd: uds zarf package create src/dns-updates/ --confirm --no-progress --architecture=${ARCH} --skip-sbom --output ./build

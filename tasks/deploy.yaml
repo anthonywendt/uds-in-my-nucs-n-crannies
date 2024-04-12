@@ -14,10 +14,15 @@ tasks:
       - description: Deploy the RKE2 uds-core bundle
         cmd: UDS_CONFIG=bundles/rke2/uds-core/uds-config.yaml uds deploy ./build/uds-bundle-nucs-n-crannies-uds-core-${ARCH}-*.tar.zst --confirm --no-progress
 
-  - name: lfai-bundle
+  - name: lfai-cpu-bundle
     actions:
-      - description: Deploy the LFIA bundle
-        cmd: UDS_CONFIG=bundles/rke2/lfai/uds-config.yaml uds deploy ./build/uds-bundle-nucs-n-crannies-lfai-${ARCH}-*.tar.zst --confirm --no-progress
+      - description: Deploy the LFIA CPU bundle
+        cmd: UDS_CONFIG=bundles/rke2/lfai-cpu/uds-config.yaml uds deploy ./build/uds-bundle-nucs-n-crannies-lfai-cpu-${ARCH}-*.tar.zst --confirm --no-progress
+
+  - name: lfai-gpu-bundle
+    actions:
+      - description: Deploy the LFIA GPU bundle
+        cmd: UDS_CONFIG=bundles/rke2/lfai-gpu/uds-config.yaml uds deploy ./build/uds-bundle-nucs-n-crannies-lfai-gpu-${ARCH}-*.tar.zst --confirm --no-progress
 
   - name: swf-bundle
     actions:

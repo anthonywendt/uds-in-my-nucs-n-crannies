@@ -29,8 +29,11 @@ uds run create-init-bundle
 # Create uds-core bundle
 uds run create-uds-core-bundle
 
-# Create LeapfrogAI bundle
-uds run create-lfai-bundle
+# Create LeapfrogAI CPU bundle
+uds run create-lfai-cpu-bundle
+
+# Create LeapfrogAI GPU bundle
+uds run create-lfai-gpu-bundle
 
 # Create swf bundle
 uds run create-swf-bundle
@@ -41,8 +44,11 @@ uds run deploy-init-bundle
 # Deploy uds-core bundle (10m)
 uds run deploy-uds-core-bundle
 
-# Deploy LeapfrogAI bundle (4m)
-uds run deploy-lfai-bundle
+# Deploy LeapfrogAI CPU bundle (4m)
+uds run deploy-lfai-cpu-bundle
+
+# Deploy LeapfrogAI GPU bundle (4m)
+uds run deploy-lfai-gpu-bundle
 
 # Deploy swf bundle (? Probably 5m) Hit disc pressure issue before I could finish
 uds run deploy-swf-bundle
