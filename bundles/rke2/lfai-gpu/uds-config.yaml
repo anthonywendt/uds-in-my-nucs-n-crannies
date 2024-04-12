@@ -9,10 +9,10 @@ variables:
     max_tokens: 16384
 
   text-embeddings:
-    gpu_limit: 1
+    gpu_limit: 0
 
   whisper:
-    gpu_limit: 1
+    gpu_limit: 0
 
   vllm:
     gpu_limit: 1

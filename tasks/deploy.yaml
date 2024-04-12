@@ -2,29 +2,29 @@ tasks:
   - name: k3d-bundle
     actions:
       - description: Deploy the k3d bundle
-        cmd: UDS_CONFIG=bundles/k3d-core-gitlab/uds-config.yaml uds deploy ./build/uds-bundle-nucs-n-crannies-k3d-demo-${ARCH}-*.tar.zst --confirm --no-progress
+        cmd: UDS_CONFIG=bundles/k3d-core-gitlab/uds-config.yaml uds deploy ./build/uds-bundle-nucs-n-crannies-k3d-demo-${ARCH}-*.tar.zst --confirm --no-progress --no-tea
 
   - name: init-bundle
     actions:
       - description: Deploy the RKE2 init bundle
-        cmd: UDS_CONFIG=bundles/rke2/init/uds-config.yaml uds deploy ./build/uds-bundle-nucs-n-crannies-init-${ARCH}-*.tar.zst --confirm --no-progress
+        cmd: UDS_CONFIG=bundles/rke2/init/uds-config.yaml uds deploy ./build/uds-bundle-nucs-n-crannies-init-${ARCH}-*.tar.zst --confirm --no-progress --no-tea
 
   - name: uds-core-bundle
     actions:
       - description: Deploy the RKE2 uds-core bundle
-        cmd: UDS_CONFIG=bundles/rke2/uds-core/uds-config.yaml uds deploy ./build/uds-bundle-nucs-n-crannies-uds-core-${ARCH}-*.tar.zst --confirm --no-progress
+        cmd: UDS_CONFIG=bundles/rke2/uds-core/uds-config.yaml uds deploy ./build/uds-bundle-nucs-n-crannies-uds-core-${ARCH}-*.tar.zst --confirm --no-progress --no-tea
 
   - name: lfai-cpu-bundle
     actions:
       - description: Deploy the LFIA CPU bundle
-        cmd: UDS_CONFIG=bundles/rke2/lfai-cpu/uds-config.yaml uds deploy ./build/uds-bundle-nucs-n-crannies-lfai-cpu-${ARCH}-*.tar.zst --confirm --no-progress
+        cmd: UDS_CONFIG=bundles/rke2/lfai-cpu/uds-config.yaml uds deploy ./build/uds-bundle-nucs-n-crannies-lfai-cpu-${ARCH}-*.tar.zst --confirm --no-progress --no-tea
 
   - name: lfai-gpu-bundle
     actions:
       - description: Deploy the LFIA GPU bundle
-        cmd: UDS_CONFIG=bundles/rke2/lfai-gpu/uds-config.yaml uds deploy ./build/uds-bundle-nucs-n-crannies-lfai-gpu-${ARCH}-*.tar.zst --confirm --no-progress
+        cmd: UDS_CONFIG=bundles/rke2/lfai-gpu/uds-config.yaml uds deploy ./build/uds-bundle-nucs-n-crannies-lfai-gpu-${ARCH}-*.tar.zst --confirm --no-progress --no-tea
 
   - name: swf-bundle
     actions:
       - description: Deploy the RKE2 swf bundle
-        cmd: UDS_CONFIG=bundles/rke2/swf/uds-config.yaml uds deploy ./build/uds-bundle-nucs-n-crannies-swf-${ARCH}-*.tar.zst --confirm --no-progress
+        cmd: UDS_CONFIG=bundles/rke2/swf/uds-config.yaml uds deploy ./build/uds-bundle-nucs-n-crannies-swf-${ARCH}-*.tar.zst --confirm --no-progress --no-tea
