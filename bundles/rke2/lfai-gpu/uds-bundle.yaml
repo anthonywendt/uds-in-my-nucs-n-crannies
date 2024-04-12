@@ -1,3 +1,4 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/defenseunicorns/uds-cli/v0.10.4/uds.schema.json
 kind: UDSBundle
 metadata:
   name: nucs-n-crannies-lfai-gpu
@@ -12,7 +13,7 @@ packages:
   # OpenAI-like API
   - name: leapfrogai-api
     repository: ghcr.io/defenseunicorns/packages/leapfrogai/leapfrogai-api
-    ref: 0.6.0
+    ref: 0.6.1
 
   # Legacy: AI chat, transcription, and summarization frontend
   - name: leapfrogai-ui
@@ -22,12 +23,12 @@ packages:
   # Model for generic chat and summarization
   - name: vllm
     repository: ghcr.io/defenseunicorns/packages/leapfrogai/vllm
-    ref: 0.6.0
+    ref: 0.6.1
 
   # Model for providing vector embeddings for text
   - name: text-embeddings
     repository: ghcr.io/defenseunicorns/packages/leapfrogai/text-embeddings
-    ref: 0.6.0
+    ref: 0.6.1
 
   # Legacy: Backend capability for RAG and VectorDB
   - name: rag
@@ -37,9 +38,4 @@ packages:
   # Model for converting audio to text
   - name: whisper
     repository: ghcr.io/defenseunicorns/packages/leapfrogai/whisper
-    ref: 0.6.0
-
-  # Transcription Model
-  - name: whisper
-    repository: ghcr.io/defenseunicorns/packages/leapfrogai/whisper
-    ref: 0.6.0
+    ref: 0.6.1
