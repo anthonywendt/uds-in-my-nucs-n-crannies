@@ -1,5 +1,7 @@
 options:
   log_level: info
 variables:
+  init:
+    REGISTRY_HPA_ENABLE: false
   metallb:
       IP_ADDRESS_POOL: "192.168.10.200-192.168.10.210"
